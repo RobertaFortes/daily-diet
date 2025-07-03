@@ -1,21 +1,102 @@
-# RF
+# 🍽️ Daily Diet API
 
-- [x] Deve ser possível criar um usuário
-- [x] Deve ser possível registrar uma refeição feita
-- [x] Deve ser possível editar uma refeição
-- [x] Deve ser possível apagar uma refeição
-- [x] Deve ser possível listar todas as refeições de um usuário
-- [x] Deve ser possível visualizar uma única refeição
-- [] Deve ser possível recuperar as métricas de um usuário
--- Quantidade total de refeições registradas
--- Quantidade total de refeições dentro da dieta
--- Quantidade total de refeições fora da dieta
--- Melhor sequência de refeições dentro da dieta
+A RESTful API for tracking daily meals and retrieving diet-related metrics.
 
-# RN
+## 🚀 Tech Stack
 
-- [x] As refeições devem ser relacionadas a um usuário
-- [x] Deve ser possível identificar o usuário entre as requisições
-- [x] O usuário só pode visualizar, editar e apagar as refeições o qual ele criou
+- [Node.js](https://nodejs.org/)
+- [Fastify](https://fastify.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Knex.js](https://knexjs.org/)
+- [SQLite](https://sqlite.org/)
+- [Zod](https://zod.dev/)
+- [Vitest](https://vitest.dev/)
 
-# RNF
+## 📦 Installation
+
+```bash
+npm install
+cp .env.example .env
+cp .env.test.example .env.test
+```
+
+## 🔧 Database Setup
+
+```bash
+npx knex migrate:latest
+npx knex migrate:rollback --all
+```
+
+## 🏃 Running the Server
+
+```bash
+npm run dev
+npm run build
+```
+
+## 🧪 Running Tests
+
+```bash
+npm run test
+```
+
+## 📬 API Endpoints
+
+| Method | Route         | Description                              |
+|--------|---------------|------------------------------------------|
+| POST   | /users        | Start session (sets sessionId cookie)    |
+| POST   | /meals        | Create a new meal                        |
+| GET    | /meals        | List all meals for current session       |
+| GET    | /meals/:id    | Get details of a specific meal           |
+| PUT    | /meals/:id    | Update a meal                            |
+| DELETE | /meals/:id    | Delete a meal                            |
+| GET    | /metrics      | Get diet metrics for current session     |
+
+## 🗂 Project Structure
+
+```
+db/
+├── migrations/
+├── app.db
+├── test.db
+src/
+├── env/
+├── middlewares/
+├── routes/
+├── types/
+├── app.ts
+├── server.ts
+├── database.ts
+test/
+├── meals.spec.ts
+.env
+.env.example
+.env.test
+.env.test.example
+```
+
+## 💡 Notes
+
+- Session-based authentication using a sessionId cookie.
+- Metrics include total meals, in/out of diet, and best diet streak.
+- Default database is SQLite. You can switch clients via .env.
+
+### Functional requirements
+
+- [x] It should be possible to create a user
+- [x] It should be possible to record a meal
+- [x] It should be possible to edit a meal
+- [x] It should be possible to delete a meal
+- [x] It should be possible to list all meals of a user
+- [x] It should be possible to view a single meal
+- [x] It should be possible to retrieve user metrics
+  - Total number of meals recorded
+  - Total number of meals within the diet
+  - Total number of meals outside the diet
+  - Best sequence of meals within the diet
+  
+### Business rules
+
+- [x] Meals should be associated with a user
+- [x] It should be possible to identify the user between requests
+- [x] A user should only be able to view, edit, and delete meals they created
