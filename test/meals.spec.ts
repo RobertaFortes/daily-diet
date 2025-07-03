@@ -66,7 +66,7 @@ describe('Meals routes', () => {
         name: 'Sanduíche',
         description:
           'Sanduíche de pão integral com atum e salada de alface e tomate',
-        date_time: 1660312800000,
+        date_time: '2022-08-12T14:00:00.000Z',
         is_on_diet: 1,
       }),
     ])
