@@ -1,14 +1,21 @@
 # RF
 
-- [x] o usuário deve poder mcriar uma nova transação
-- [x] o usuário deve poder obter um resumo da sua conta
-- [x] o usuário deve poder listar todas as transações que já ocorreram
-- [x] o usuário deve poder visualizar uma transação única
+- [x] Deve ser possível criar um usuário
+- [x] Deve ser possível registrar uma refeição feita
+- [x] Deve ser possível editar uma refeição
+- [x] Deve ser possível apagar uma refeição
+- [x] Deve ser possível listar todas as refeições de um usuário
+- [x] Deve ser possível visualizar uma única refeição
+- [] Deve ser possível recuperar as métricas de um usuário
+-- Quantidade total de refeições registradas
+-- Quantidade total de refeições dentro da dieta
+-- Quantidade total de refeições fora da dieta
+-- Melhor sequência de refeições dentro da dieta
 
 # RN
 
-- [x] a transação pode ser do tipo crédito que somará ao valor total, ou débito que vai subtrair
-- [] deve ser possível identificar o usuário entre as requisições
-- [x] o usuário só pode visualizar transações criadas por ele
+- [x] As refeições devem ser relacionadas a um usuário
+- [x] Deve ser possível identificar o usuário entre as requisições
+- [x] O usuário só pode visualizar, editar e apagar as refeições o qual ele criou
 
 # RNF
